@@ -34,7 +34,6 @@ public class Item {
     @OneToMany(mappedBy = "item")
     private List<Bid> bids;
     private Boolean auctionEnded;
-    private Double soldPrice;
     @OneToMany(mappedBy = "item")
     private List<Notification> notifications;
 
@@ -178,14 +177,6 @@ public class Item {
 
     public void setAuctionEnded(Boolean auctionEnded) {
         this.auctionEnded = auctionEnded;
-    }
-
-    public Double getSoldPrice() {
-        return soldPrice;
-    }
-
-    public void setSoldPrice(Double soldPrice) {
-        this.soldPrice = soldPrice;
     }
 
     public List<Notification> getNotifications() {
