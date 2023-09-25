@@ -6,9 +6,11 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
+@Table(name="item")
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
     private Integer id;
     private String title;
     private String description;
@@ -35,6 +37,9 @@ public class Item {
     private Double soldPrice;
     @OneToMany(mappedBy = "item")
     private List<Notification> notifications;
+
+    public Item() {
+    }
 
     // getters and setters
 }
