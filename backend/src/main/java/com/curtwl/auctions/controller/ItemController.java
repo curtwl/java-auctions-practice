@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/api/auctions")
 public class ItemController {
     private final ItemRepository itemRepository;
