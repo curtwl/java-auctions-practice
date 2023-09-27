@@ -71,9 +71,9 @@ public class Item {
         return seller;
     }
 
-    public void setSeller(User seller) {
-        this.seller = seller;
-    }
+//    public void setSeller(User seller) {
+//        this.seller = seller;
+//    }
 
     public Boolean getSold() {
         return sold;
@@ -87,9 +87,9 @@ public class Item {
         return purchasedBy;
     }
 
-    public void setPurchasedBy(User purchasedBy) {
-        this.purchasedBy = purchasedBy;
-    }
+//    public void setPurchasedBy(User purchasedBy) {
+//        this.purchasedBy = purchasedBy;
+//    }
 
     public String getCategory() {
         return category;
@@ -159,9 +159,9 @@ public class Item {
         return bidders;
     }
 
-    public void setBidders(List<User> bidders) {
-        this.bidders = bidders;
-    }
+//    public void setBidders(List<User> bidders) {
+//        this.bidders = bidders;
+//    }
 
     public List<Bid> getBids() {
         return bids;
