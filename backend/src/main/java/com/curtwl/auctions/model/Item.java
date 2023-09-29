@@ -1,5 +1,6 @@
 package com.curtwl.auctions.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -17,10 +18,10 @@ public class Item {
     @OneToMany(mappedBy = "item", fetch = FetchType.EAGER)
     private List<Picture> pictures;
     @ManyToOne
-    private User seller;
+    private User seller_id;
     private Boolean sold;
     @ManyToOne
-    private User purchasedBy;
+    private User purchasedBy_id;
     private String category;
     private String condition;
     private LocalDateTime createdAt;
@@ -30,7 +31,7 @@ public class Item {
     private Double startingBid;
     private Double reservePrice;
     @ManyToMany
-    private List<User> bidders;
+    private List<User> bidders_id;
     @OneToMany(mappedBy = "item")
     private List<Bid> bids;
     private Boolean auctionEnded;
@@ -63,12 +64,12 @@ public class Item {
         return pictures;
     }
 
-    public void setPictures(List<Picture> pictures) {
-        this.pictures = pictures;
-    }
+//    public void setPictures(List<Picture> pictures) {
+//        this.pictures = pictures;
+//    }
 
-    public User getSeller() {
-        return seller;
+    public User getSeller_id() {
+        return seller_id;
     }
 
 //    public void setSeller(User seller) {
@@ -83,8 +84,8 @@ public class Item {
         this.sold = sold;
     }
 
-    public User getPurchasedBy() {
-        return purchasedBy;
+    public User getPurchasedBy_id() {
+        return purchasedBy_id;
     }
 
 //    public void setPurchasedBy(User purchasedBy) {
@@ -155,8 +156,8 @@ public class Item {
         this.reservePrice = reservePrice;
     }
 
-    public List<User> getBidders() {
-        return bidders;
+    public List<User> getBidders_id() {
+        return bidders_id;
     }
 
 //    public void setBidders(List<User> bidders) {
@@ -167,9 +168,9 @@ public class Item {
         return bids;
     }
 
-    public void setBids(List<Bid> bids) {
-        this.bids = bids;
-    }
+//    public void setBids(List<Bid> bids) {
+//        this.bids = bids;
+//    }
 
     public Boolean getAuctionEnded() {
         return auctionEnded;

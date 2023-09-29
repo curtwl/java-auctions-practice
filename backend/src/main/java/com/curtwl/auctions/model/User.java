@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
+@Table(name="user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,15 +19,15 @@ public class User {
     private String email;
     private LocalDateTime emailVerified;
     private String image;
-    @OneToMany(mappedBy = "seller")
+    @OneToMany(mappedBy = "seller_id", fetch = FetchType.LAZY)
     private List<Item> itemsForSale;
-    @OneToMany(mappedBy = "purchasedBy")
+    @OneToMany(mappedBy = "purchasedBy_id", fetch = FetchType.LAZY)
     private List<Item> itemsPurchased;
     @OneToMany
     private List<Address> addresses;
     @OneToMany(mappedBy = "bidder")
     private List<Bid> bids;
-    @ManyToMany(mappedBy = "bidders")
+    @ManyToMany(mappedBy = "bidders_id", fetch = FetchType.LAZY)
     private List<Item> biddingOn;
     @OneToMany(mappedBy = "user")
     private List<Notification> notifications;
@@ -109,4 +110,7 @@ public class User {
         return notifications;
     }
 
+//    public String getRoles() {
+//        return "ADMIN";
+//    }
 }
